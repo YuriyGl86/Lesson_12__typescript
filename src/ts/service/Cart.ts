@@ -16,11 +16,10 @@ export default class Cart {
     }
 
     get totalSum(): number {
-        let res = this._items.reduce((sum, item) => {
+        return this._items.reduce((sum, item) => {
             const itemSum = item.amount? item.amount * item.price : item.price
             return sum + itemSum
         }, 0)
-        return res
     }
 
     gettotalSumDiscount(discount: number): number{
